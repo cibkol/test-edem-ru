@@ -1,0 +1,11 @@
+@use "../../styles/constants.scss";
+
+.footer {
+  width: constants.$max-width;
+  padding: 32px 0 16px 0;
+  display: flex;
+  flex-direction: column;
+
+  margin: auto;
+  height: 124px;
+}

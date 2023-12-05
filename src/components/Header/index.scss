@@ -1,0 +1,23 @@
+@use "../../styles/constants.scss";
+
+$header-padding-vertical: 28px;
+
+.header {
+  display: flex;
+  justify-content: center;
+
+  padding: $header-padding-vertical 0;
+
+  background-color: map-get(constants.$colors, white);
+  border-bottom: 1px solid map-get(constants.$colors, gray-2);
+
+  position: sticky;
+  top: 0;
+
+  &_content-block {
+    justify-content: space-between;
+
+    width: 100%;
+    max-width: constants.$max-width;
+  }
+}

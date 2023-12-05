@@ -1,0 +1,14 @@
+@use "../../../styles/constants.scss";
+
+.default-layout {
+  height: 100vh;
+
+  background-color: map-get(constants.$colors, gray-1);
+
+  &_content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid map-get(constants.$colors, gray-2);
+  }
+}

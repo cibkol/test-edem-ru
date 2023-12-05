@@ -1,0 +1,19 @@
+@use "../../styles/constants.scss";
+
+.ascent-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  left: 50%;
+  top: -20%;
+
+  background-color: map-get(constants.$colors, red-1);
+  color: map-get(constants.$colors, white);
+
+  border-radius: 50%;
+  width: 22px;
+  height: 16px;
+  font-size: 11px;
+}

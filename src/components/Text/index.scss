@@ -1,0 +1,25 @@
+@use "../../styles/constants.scss";
+
+.text-component {
+  font-size: 12px;
+
+  &__gray-3 {
+    color: map-get(constants.$colors, gray-3);
+  }
+
+  &__gray-5 {
+    color: map-get(constants.$colors, gray-5);
+  }
+
+  &__gray-6 {
+    color: map-get(constants.$colors, gray-6);
+  }
+
+  &__gray-6 {
+    color: map-get(constants.$colors, gray-7);
+  }
+
+  &__black {
+    color: map-get(constants.$colors, black);
+  }
+}
