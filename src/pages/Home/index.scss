@@ -1,0 +1,13 @@
+@use "../../styles/constants.scss";
+
+.home-page {
+  width: 100%;
+  max-width: constants.$max-width;
+
+  padding: 32px 0 24px 0;
+}
+
+.transportation-cards-list {
+  gap: 8px;
+  padding-top: 24px;
+}

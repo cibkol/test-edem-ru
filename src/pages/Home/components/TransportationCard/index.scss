@@ -1,0 +1,35 @@
+@use "../../../../styles/constants.scss";
+
+.transportation-card {
+  background-color: map-get(constants.$colors, white);
+  padding: 20px 24px;
+  border-radius: 10px;
+  gap: 20px;
+  justify-content: space-between;
+
+  &_content {
+    gap: 12px;
+    flex: 3;
+  }
+
+  &_row {
+    gap: 3px;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    & > span {
+      white-space: nowrap;
+    }
+  }
+
+  &_price {
+    flex: 1;
+    min-width: min-content;
+    gap: 10px;
+    justify-content: space-between;
+    padding: 4px 12px;
+    border-radius: 8px;
+    background-color: map-get(constants.$colors, gray-1);
+    height: min-content;
+  }
+}

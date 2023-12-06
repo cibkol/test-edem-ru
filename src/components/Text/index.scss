@@ -15,8 +15,12 @@
     color: map-get(constants.$colors, gray-6);
   }
 
-  &__gray-6 {
+  &__gray-7 {
     color: map-get(constants.$colors, gray-7);
+  }
+
+  &__blue-1 {
+    color: map-get(constants.$colors, blue-1);
   }
 
   &__black {

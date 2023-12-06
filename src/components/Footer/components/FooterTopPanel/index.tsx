@@ -4,10 +4,10 @@ import FlexBlock from "../../../FlexBlock";
 import Text from "../../../Text";
 import GooglePlayPng from "../../../../assets/png/google-play-retina.png";
 import AppStorePng from "../../../../assets/png/app-store-retina.png";
-import "./index.scss";
 import VkSvg from "../../../../assets/svg/VkSvg";
 import OkSvg from "../../../../assets/svg/OkSvg";
 import TgSvg from "../../../../assets/svg/TgSvg";
+import "./index.scss";
 
 const FooterTopPanel: React.FC = () => {
   const getLinks = () =>
