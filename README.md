@@ -1,8 +1,8 @@
 # Тестовое задание
 
-Для открытия:
-npm i
-npm run server
+# Для открытия:
+# npm i
+# npm run server
 
-(открыть новый терминал)
-npm run start
+# (открыть новый терминал)
+# npm run start
