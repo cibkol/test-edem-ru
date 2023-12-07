@@ -5,6 +5,7 @@ export interface ITransportationCard {
   types: string[];
   city: string;
   image?: string;
+  id: number;
 }
 
 export interface ITransportationData {

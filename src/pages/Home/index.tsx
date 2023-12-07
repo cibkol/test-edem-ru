@@ -101,7 +101,7 @@ const Home: React.FC = () => {
       </FlexBlock>
       <FlexBlock className="transportation-cards-list" flexDirection="column">
         {transportationData.map((transportation, index) => (
-          <TransportationCard {...transportation} key={index} />
+          <TransportationCard {...transportation} key={transportation.id} />
         ))}
         {contentIsFull && !isLoading && (
           <FlexBlock className="transportation-cards-list_full">
