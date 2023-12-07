@@ -7,6 +7,10 @@
   gap: 20px;
   justify-content: space-between;
 
+  &_image-block {
+    border-radius: 8px;
+  }
+
   &_content {
     gap: 12px;
     flex: 3;

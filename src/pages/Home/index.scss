@@ -10,4 +10,9 @@
 .transportation-cards-list {
   gap: 8px;
   padding-top: 24px;
+
+  &_full {
+    padding: 20px 0;
+    justify-content: center;
+  }
 }

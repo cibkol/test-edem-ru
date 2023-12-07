@@ -1,4 +1,4 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import cl from "classnames";
 import "./index.scss";
 
@@ -19,13 +19,12 @@ interface ITextProps {
   className?: string;
   fontSize?: number;
   fontWeight?: fontWeight;
-  children?: string;
   maxWidth?: string;
   lineHeight?: string;
   color?: string;
 }
 
-const Text: React.FC<ITextProps> = ({
+const Text: React.FC<PropsWithChildren<ITextProps>> = ({
   children,
   fontSize,
   fontWeight,

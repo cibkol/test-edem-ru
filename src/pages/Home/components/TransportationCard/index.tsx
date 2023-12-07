@@ -3,31 +3,49 @@ import BoxSvg from "../../../../assets/svg/BoxSvg";
 import MapMarkerSvg from "../../../../assets/svg/MapMarkerSvg";
 import FlexBlock from "../../../../components/FlexBlock";
 import Text from "../../../../components/Text";
+import { ITransportationCard } from "../../../../reducers/TransportationReducer/types";
 import "./index.scss";
 
-const TransportationCard: React.FC = () => {
+const TransportationCard: React.FC<ITransportationCard> = ({
+  city,
+  date,
+  name,
+  price,
+  types,
+  image,
+}) => {
+  const dateFormat = new Date(date);
+
+  const firstTypes = types.slice(0, 3);
+  const lastTypes = types.length > 3 && types.slice(2, -1);
+
   return (
     <FlexBlock className="transportation-card">
-      {/* <img /> */}
-      <div
-        style={{
-          width: "170px",
-          height: "128px",
-          borderRadius: "8px",
-          backgroundColor: "green",
-        }}
-      />
+      {image && (
+        <img
+          src={image}
+          width={170}
+          height={128}
+          className="transportation-card_image-block"
+          alt="photo_auto"
+        />
+      )}
+
       <FlexBlock className="transportation-card_content" flexDirection="column">
-        <Text color="gray-5" fontWeight="600" fontSize={20}>
-          Газель фермер
+        <Text className="hover" color="gray-5" fontWeight="600" fontSize={20}>
+          {name}
         </Text>
         <FlexBlock className="transportation-card_row">
           <MapMarkerSvg />
           <Text color="gray-5" fontWeight="500" fontSize={14}>
-            Екатеринбург
+            {city}
           </Text>
           <Text color="gray-5" fontWeight="700">
-            26 сен, вс
+            {dateFormat.getDate()}{" "}
+            {dateFormat.toLocaleString("default", {
+              month: "short",
+              weekday: "short",
+            })}
           </Text>
         </FlexBlock>
         <FlexBlock className="transportation-card_row">
@@ -36,11 +54,24 @@ const TransportationCard: React.FC = () => {
             Тип груза:
           </Text>
           <Text color="gray-7" fontSize={14}>
-            Личные вещи, Стройматериалы, Техника и оборудование и
+            {firstTypes.length
+              ? firstTypes.map(
+                  (type, index) =>
+                    `${type}${
+                      index + 1 === firstTypes.length
+                        ? !lastTypes
+                          ? "."
+                          : " и "
+                        : ", "
+                    } `
+                )
+              : "отсутствует"}
           </Text>
-          <Text color="blue-1" className="hover" fontSize={14}>
-            еще 5 типов
-          </Text>
+          {lastTypes && (
+            <Text color="blue-1" className="hover" fontSize={14}>
+              еще {lastTypes.length} типов
+            </Text>
+          )}
         </FlexBlock>
       </FlexBlock>
       <FlexBlock className="transportation-card_price">
@@ -48,7 +79,7 @@ const TransportationCard: React.FC = () => {
           За 1 час
         </Text>
         <Text fontSize={16} fontWeight="600">
-          от 550 ₽
+          от {price} ₽
         </Text>
       </FlexBlock>
     </FlexBlock>

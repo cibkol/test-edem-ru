@@ -11,3 +11,5 @@ export const FOOTER_LINKS = [
   { link: "/", name: "Популярные маршруты" },
   { link: "/", name: "СМИ и Рекламодателям" },
 ];
+
+export const BASE_URL = "http://localhost:3004";
