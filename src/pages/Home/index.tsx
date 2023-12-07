@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useMemo, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SET_TRANSPORTATION_ACTION } from "../../actions/TransprtationActions";
 import axios from "../../api/axios";
@@ -89,19 +89,29 @@ const Home: React.FC = () => {
       });
   };
 
+  const countSearchTransportation = useMemo(
+    () => (isLoading ? "..." : transportationData.length),
+    [transportationData, isLoading]
+  );
+
   useBottomScrollListener<HTMLDivElement>(onBottom);
+
+  const MemoTransportationCard = memo(
+    TransportationCard,
+    (prevProps, nextProps) =>
+      JSON.stringify(prevProps) === JSON.stringify(nextProps)
+  );
 
   return (
     <FlexBlock className="home-page" flexDirection="column">
       <FlexBlock>
         <Text fontSize={28} fontWeight="600">
-          Найдено: {isLoading ? "..." : transportationData.length}{" "}
-          грузоперевозок
+          Найдено: {countSearchTransportation} грузоперевозок
         </Text>
       </FlexBlock>
       <FlexBlock className="transportation-cards-list" flexDirection="column">
-        {transportationData.map((transportation, index) => (
-          <TransportationCard {...transportation} key={transportation.id} />
+        {transportationData.map((transportation) => (
+          <MemoTransportationCard {...transportation} key={transportation.id} />
         ))}
         {contentIsFull && !isLoading && (
           <FlexBlock className="transportation-cards-list_full">
