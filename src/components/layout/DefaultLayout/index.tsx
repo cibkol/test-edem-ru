@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../../Footer";
 import FlexBlock from "../../FlexBlock";
 
-const DefaultLayout: React.FC<React.PropsWithChildren> = ({ children }) => {
+const DefaultLayout: React.FC = () => {
   return (
     <FlexBlock flexDirection="column" className="default-layout">
       <Header />
